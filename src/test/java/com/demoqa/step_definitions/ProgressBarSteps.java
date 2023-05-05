@@ -33,6 +33,9 @@ public class ProgressBarSteps {
     @Then("verify button name is Reset")
     public void verifyButtonNameIsReset() {
 
+        String actualText = progressBarPage.resetButton.getText();
+
+        Assert.assertEquals("Reset",actualText);
 
 
     }
@@ -46,6 +49,7 @@ public class ProgressBarSteps {
         int expectedValueINT = Integer.parseInt(expectedValue);
         int actualValueINT = Integer.parseInt(actualValue);
 
+        // making a kind of logic that does not matter for our feature functionality
         Assert.assertTrue(actualValueINT <= expectedValueINT + 5 || actualValueINT >= expectedValueINT - 5);
 
     }
