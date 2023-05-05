@@ -31,6 +31,14 @@ public class AccordianStepsDefs {
 
     @Then("verify class text is {string} for {string}")
     public void verifyClassTextIsFor(String stateOfAccordian, String number) {
-
+        String collapsedInfo = accordianPage.getCollapsedInfoForAccordian(number).getAttribute("class");
+        System.out.println("collapsedInfo = " + collapsedInfo);
+        if(stateOfAccordian.equalsIgnoreCase("open")){
+            Assert.assertEquals("collapse show",collapsedInfo);
+        }else if(stateOfAccordian.equalsIgnoreCase("close")){
+            Assert.assertEquals("collapse",collapsedInfo);
+        }else {
+            System.out.println("Undefined Status");
+        }
     }
 }
