@@ -11,4 +11,6 @@ Feature: accordian actions on page
 
   # To_Do: Turn it into a Scenario Outline: verify changing when click accordians
 
+  # baseUrl = https://demoqa.com/                 path = accordian
+
 

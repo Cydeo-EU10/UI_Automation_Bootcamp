@@ -11,10 +11,11 @@ import org.junit.Assert;
 
 public class AccordianStepsDefs {
 
-
+    public String baseUrl = ConfigurationReader.getProperty("baseUrl");
     @Given("Navigate to {string} page")
     public void navigate_to_page(String path) {
-
+    //     Driver.getDriver()   ---> giving me a singlton driver object
+        Driver.getDriver().get(baseUrl+path); // No HARD coded structure
     }
     @When("click {string} accordion")
     public void click_accordion(String number) {
