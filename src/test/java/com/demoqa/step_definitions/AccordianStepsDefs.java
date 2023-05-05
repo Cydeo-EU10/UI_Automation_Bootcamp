@@ -23,6 +23,7 @@ public class AccordianStepsDefs {
     public void click_accordion(String number) throws InterruptedException {
        //  accordianPage.accordianTwo.click(); ---> this does not use parameter from feature
         accordianPage.selectAccordian(number).click();
+        accordianPage.scrollDown();
         Thread.sleep(2000); // to observe the change in webPage not for testing purpose
     }
 
