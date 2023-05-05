@@ -12,15 +12,18 @@ import org.junit.Assert;
 public class AccordianStepsDefs {
 
     public String baseUrl = ConfigurationReader.getProperty("baseUrl");
+    AccordianPage accordianPage = new AccordianPage();
+
     @Given("Navigate to {string} page")
     public void navigate_to_page(String path) {
     //     Driver.getDriver()   ---> giving me a singlton driver object
         Driver.getDriver().get(baseUrl+path); // No HARD coded structure
     }
     @When("click {string} accordion")
-    public void click_accordion(String number) {
-
-
+    public void click_accordion(String number) throws InterruptedException {
+       //  accordianPage.accordianTwo.click(); ---> this does not use parameter from feature
+        accordianPage.selectAccordian(number).click();
+        Thread.sleep(2000); // to observe the change in webPage not for testing purpose
     }
 
 
